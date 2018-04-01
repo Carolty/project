@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>calculator</title>
+    <script type="text/javascript">
+        function calculator(obj){
+            var num1,num2,result;
+            num1=parseFloat(document.myform.txtnum1.value);
+            num2=parseFloat(document.myform.txtnum2.value);
+            switch(obj){
+                case"+":
+                result=num1+num2;
+                break;
+                case"-":
+                result=num1-num2;
+                break;
+                case"*":
+                result=num1*num2;
+                break;
+                case"/":
+                if(num2!=0)
+                result=num1/num2;
+                else
+                result="分母不能为0,请重新输入"
+                break;
+            }
+            document.myform.txtresult.value=result;
+        }
+        
+    
+    </script>
+</head>
+<body>
+    <form name="myform">
+        <tr>
+            <td>第一个数：</td>
+            <td><input type="text" id="txtnum1" name="txtnum1"><br></td>
+        </tr>
+        <tr>
+            <td> 第二个数：</td>
+            <td><input type="text" id="txtnum2" name="txtnum2"><br></td>
+        </tr>
+       <tr>
+           <td><input type="button" name="btnb" value="+" id="a" onclick="calculator('+')"></td>
+           <td><input type="button" name="btnb" value="-" id="b" onclick="calculator('-')"></td>
+           <td><input type="button" name="btnc" value="×" id="c" onclick="calculator('*')"></td>
+           <td><input type="button" name="btnd" value="÷" id="d" onclick="calculator('/')"></td>
+       </tr>
+        
+        
+        
+        <br>
+        计算结果：<input type="text" id="txtresult">
+    </form>
+</body>
+</html>
